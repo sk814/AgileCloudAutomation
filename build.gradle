@@ -1,0 +1,28 @@
+plugins {
+	id 'groovy'
+	id 'eclipse'
+}
+
+sourceCompatibility = '1.11'
+
+eclipse {
+	project {
+		name 'week13_project'
+		buildCommand 'org.eclipse.jdt.core.javabuilder'
+		buildCommand 'org.eclipse.buildship.core.gradleprojectbuilder'
+		natures 'org.eclipse.jdt.core.javanature',
+			'org.eclipse.jdt.groovy.core.groovyNature',
+			'org.eclipse.buildship.core.gradleprojectnature'
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile 'org.codehaus.groovy:groovy-all:3.0.5'
+	compile 'org.mongodb:mongodb-driver-sync:4.1.0'
+	implementation( files ('submission_helper/submission_helper_template-0.0.1-SNAPSHOT.jar'))
+}
+
